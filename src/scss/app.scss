@@ -1,0 +1,167 @@
+html,
+body {
+	height: 100%;
+}
+.wrapper {
+	position: relative;
+	min-height: 100%;
+}
+ body {
+    margin: 0;
+    padding: 0;
+    background: rgb(55, 58, 245);
+}
+
+.containerInputs {
+    position: relative;
+    padding: 0 20px;
+}
+
+.containerSelect {
+    position: absolute;
+    z-index: 5;
+}
+
+.containerCalendar {
+position: absolute;
+right: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    margin-top: 100px;
+    border: 2px solid rgb(55, 58, 245);
+}
+
+
+.containerWeather {
+    display: grid;
+    grid-template-columns: repeat(7, 200px);
+    overflow-y: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.containerWeather::-webkit-scrollbar { 
+    width: 0px;  
+    background: transparent;  
+}
+
+.cardWeatherDay {
+    margin: 10px;
+    border: 3px solid rgb(128, 128, 128);
+    background: rgb(55, 58, 245);
+    color: rgb(255, 255, 255);
+}
+
+.arrows img {
+    width: 20px;
+    height: 30px;
+}
+
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 102px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 122px;
+}
+
+.spanSelect {
+    /* position: absolute; */
+    padding: 10px;
+    /* top: 5px;
+    left: 3px; */
+    background-color: rgb(255, 255, 255);
+    /* z-index: 3; */
+}
+
+.spanCalendar {
+    /* position: absolute; */
+    padding: 10px;
+    /* top: 5px;
+    left: 303px; */
+    background-color: rgb(255, 255, 255);
+    /* z-index: 3; */
+}
+
+.selectCities {
+    cursor: pointer;
+} 
+
+ul {
+    padding: 10px;
+}
+    
+
+li {
+    list-style: none;
+}
+
+.listCities {
+    display: none;
+    width: 250px;
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    box-shadow: 10px 10px 10px rgba(220, 220, 220, 0.4);
+}
+
+.list > li {
+    margin-top: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.visible {
+    display: block;
+}
+
+.styleIinput {
+    width: 252px;
+    height: 48px;
+    padding: 10px;
+    border: 2px solid rgba(128, 131, 164, 0.6);
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.arrow {
+    float: right;
+    margin-top: 5px;
+}
+
+
+.card {
+    background: rgb(255, 255, 255);
+    width: 660px;
+    height: 524px;
+    border-radius: 8px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+.containerPlacholder {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.border {
+    border: 2px dashed  rgb(128, 128, 128);
+}
+
+.cloud {
+    width: 200px;
+    height: 220px;
+}
+
+.text {
+    color: rgb(128, 131, 164);
+}
+
