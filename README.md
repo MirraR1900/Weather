@@ -1,5 +1,5 @@
 # weather
-[View site](weather-site-test.netlify.app)
+[View site](https://weather-site-test.netlify.app/)
 
 Status: In Progress
 
