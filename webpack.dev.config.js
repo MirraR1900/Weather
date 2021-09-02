@@ -1,7 +1,7 @@
 const path = require('path')
-const webpack =  require('webpack');
-const HtmlWebpackPlugin =  require('html-webpack-plugin');
-const ForkTsCheckerWebpackPlugin =  require('fork-ts-checker-webpack-plugin');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -28,11 +28,15 @@ module.exports = {
       },
       {
         test: /\.(scss|css)$/i,
-                use: ["style-loader", "css-loader", 'sass-loader'],
+        use: ["style-loader", "css-loader", 'sass-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        use: ['url-loader']
       },
     ],
   },
@@ -45,9 +49,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        {from:'src/images', to:'images'} 
+        { from: 'src/images', to: 'images' }
       ],
-    }), 
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new ForkTsCheckerWebpackPlugin({
       async: false
@@ -58,7 +62,7 @@ module.exports = {
     port: 8000,
     historyApiFallback: true,
     hot: true,
-},
+  },
   devServer: {
     contentBase: path.join(__dirname, "build"),
     historyApiFallback: true,

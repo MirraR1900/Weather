@@ -1,26 +1,22 @@
-html,
-body {
-	height: 100%;
-}
+@import 'utils/fonts.scss';
+@import 'utils/reset.scss';
+@import 'utils/vars.scss';
+@import 'components/card.scss';
+@import 'components/select.scss';
+@import 'components/calendar.scss';
+@import 'components/weatherDay.scss';
+
+
 .wrapper {
 	position: relative;
-	min-height: 100%;
-}
- body {
-    margin: 0;
-    padding: 0;
-    background: rgb(55, 58, 245);
+	min-height: 100vh;
+    background: $blue;
 }
 
-.containerInputs {
-    position: relative;
-    padding: 0 20px;
+.default {  // value default
+    color: $gray;
 }
 
-.containerSelect {
-    position: absolute;
-    z-index: 5;
-}
 
 .containerCalendar {
 position: absolute;
@@ -29,15 +25,19 @@ right: 20px;
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
     margin-top: 100px;
-    border: 2px solid rgb(55, 58, 245);
 }
 
+.containerPast {
+    display: block;
+    margin: 100px 30px 30px 30px;
+}
 
 .containerWeather {
     display: grid;
-    grid-template-columns: repeat(7, 200px);
+    grid-template-columns: repeat(7, 166px);
+    gap: 5px;
     overflow-y: auto;
     -ms-overflow-style: none; 
     scrollbar-width: none;
@@ -48,25 +48,32 @@ right: 20px;
     background: transparent;  
 }
 
-.cardWeatherDay {
-    margin: 10px;
-    border: 3px solid rgb(128, 128, 128);
-    background: rgb(55, 58, 245);
-    color: rgb(255, 255, 255);
-}
+.arrows {
+    display: grid;
+    justify-content: center;
+    align-items: center;
 
-.arrows img {
-    width: 20px;
-    height: 30px;
+    img {
+        width: 20px;
+        height: 30px;
+    }
 }
-
 
 h1 {
-    color: rgb(255, 255, 255);
+    margin-bottom: 100px;
+    text-align: center;
+    color: $white;
     font-size: 102px;
+    font-family: $InterMedium;
     font-style: normal;
     font-weight: 700;
     line-height: 122px;
+}
+
+h2 {
+    margin: 30px 20px;
+    font-size: 20px;
+    font-family: $InterMedium;
 }
 
 .spanSelect {
@@ -74,7 +81,7 @@ h1 {
     padding: 10px;
     /* top: 5px;
     left: 3px; */
-    background-color: rgb(255, 255, 255);
+    background-color: $white;
     /* z-index: 3; */
 }
 
@@ -83,49 +90,8 @@ h1 {
     padding: 10px;
     /* top: 5px;
     left: 303px; */
-    background-color: rgb(255, 255, 255);
+    background-color: $white;
     /* z-index: 3; */
-}
-
-.selectCities {
-    cursor: pointer;
-} 
-
-ul {
-    padding: 10px;
-}
-    
-
-li {
-    list-style: none;
-}
-
-.listCities {
-    display: none;
-    width: 250px;
-    border-radius: 10px;
-    background: rgb(255, 255, 255);
-    box-shadow: 10px 10px 10px rgba(220, 220, 220, 0.4);
-}
-
-.list > li {
-    margin-top: 10px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.visible {
-    display: block;
-}
-
-.styleIinput {
-    width: 252px;
-    height: 48px;
-    padding: 10px;
-    border: 2px solid rgba(128, 131, 164, 0.6);
-    border-radius: 8px;
-    outline: none;
-    box-sizing: border-box;
 }
 
 .arrow {
@@ -133,17 +99,9 @@ li {
     margin-top: 5px;
 }
 
-
-.card {
-    background: rgb(255, 255, 255);
-    width: 660px;
-    height: 524px;
-    border-radius: 8px;
-}
-
 .layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
 }
 
@@ -152,9 +110,6 @@ li {
     margin-top: 50px;
 }
 
-.border {
-    border: 2px dashed  rgb(128, 128, 128);
-}
 
 .cloud {
     width: 200px;
