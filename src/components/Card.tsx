@@ -63,6 +63,7 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
 
     const api = await fetch(urlWeather + '?lat=' + lat + '&lon=' + lon + '&exclude=current,minutely,hourly&units=metric&cnt=7&appid=b7ffe509c620c29c32fabe4bb2890f00')
     const data = await api.json();
+    
     data.daily.forEach((item: any) => {
       let date = new Date(item.dt * 1000);
       let setDate = ` ${date.getDate()} ${months[date.getMonth()]} ${date.getUTCFullYear()}`;
@@ -118,15 +119,13 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
           temp: temp,
           weather: data.current.weather[0]
       }
-      setObj(weatherPast);
-      console.log(data);
-      
+      setObj(weatherPast);      
     }
 
   }
 
   const present = <Select cities={cities} obj={obj} getOption={getOption} getValue={getValuesPresent} />
-  const past = <><Select cities={cities} obj={obj} getOption={getOption} getValue={getLocation} getValuesPast={getValuesPast} /><Calendar getTime={getTime} getValuesPast={getValuesPast} /></>
+  const past = <><Select cities={cities} obj={obj} getOption={getOption} getValue={getLocation} getValuesPast={getValuesPast} /><Calendar getTime={getTime} /></>
 
   return (
     <div className="card">
