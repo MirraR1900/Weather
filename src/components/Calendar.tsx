@@ -25,9 +25,14 @@ export const Calendar: React.FC<Calendar> = ({getTime}) => {
     const dateMin = `${yyyyMin}-${mmMin < 10 ? "0" + mmMin : mmMin}-${ddMin < 10 ? "0" + ddMin : ddMin}`;   
     const dateMax = `${yyyyMax}-${mmMax < 10 ? "0" + mmMax : mmMax}-${ddMax < 10 ? "0" + ddMax : ddMax}`;
 
+    const test = (e:any) => {
+      console.log(e);
+    }
+
   return (
     <div className="containerCalendar">
-      <input className="styleIinput" type="date" min={dateMin} max={dateMax} onChange={getTime}  />
+      <div className="calendarText">Selected date</div>
+      <input className="styleIinput calendar" type="date" min={dateMin} max={dateMax} onChange={getTime} onClick={test} />
     </div>
   )
 }

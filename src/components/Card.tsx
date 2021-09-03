@@ -108,7 +108,6 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
     let datePast = Math.round(new Date(timeValue).getTime() / 1000);
 
     if (lat && lon && timeValue) {
-      console.log("ok");
       const api = await fetch(`${urlWeather}/timemachine?lat=${lat}&lon=${lon}&dt=${datePast}&appid=b7ffe509c620c29c32fabe4bb2890f00`)
       const data = await api.json();
       let date = new Date(data.current.dt * 1000);
