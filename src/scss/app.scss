@@ -6,21 +6,10 @@
 @import 'components/calendar.scss';
 @import 'components/weatherDay.scss';
 
-
 .wrapper {
 	position: relative;
 	min-height: 100vh;
     background: $blue;
-}
-
-.default {  // value default
-    color: $gray;
-}
-
-
-.containerCalendar {
-position: absolute;
-right: 272px;
 }
 
 .container {
@@ -59,44 +48,21 @@ right: 272px;
     }
 }
 
+.arrowsOpasity {
+  opacity: 0;
+}
+
 h1 {
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     text-align: center;
     color: $white;
-    font-size: 102px;
+    // font-size: 102px;
     font-family: $InterMedium;
     font-style: normal;
     font-weight: 700;
-    line-height: 122px;
+    // line-height: 122px;
 }
 
-h2 {
-    margin: 30px 20px;
-    font-size: 20px;
-    font-family: $InterMedium;
-}
-
-
-.calendarText {
-    position: absolute;
-    background-image: url(../images/calendar.png);
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 252px;
-    height: 48px;
-    padding: 10px;
-    color: $gray;
-    background-color: $white;
-    border: 2px solid rgba(128, 131, 164, 0.6);
-    border-radius: 8px;
-}
-
-.calendar {
-    position: absolute;
-    opacity: 0;
-    z-index: 7;
-}
 
 .arrow {
     float: right;
@@ -105,22 +71,77 @@ h2 {
 
 .layout {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    // grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-}
-
-.containerPlacholder {
-    text-align: center;
-    margin-top: 50px;
-}
-
-
-.cloud {
-    width: 200px;
-    height: 220px;
 }
 
 .text {
     color: rgb(128, 131, 164);
+}
+
+
+@media  screen and (min-width: 1281px) {
+  .layout {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media  screen and (max-width: 1280px) {
+  .wrapper {
+      max-width: 1280px;
+      overflow-y: hidden;
+  }
+
+
+  .layout {
+      display: grid;
+      grid-template-rows: 1fr;
+      justify-items: center;
+  }
+}
+
+
+@media  screen and (min-width: 1025px) and (max-width: 1280px) {
+  h1 {
+    margin-bottom: 100px;
+    font-size: 102px;
+    line-height: 122px;
+}  
+}
+
+@media  screen and (max-width: 1024px) {
+  .layout {
+    margin-bottom: 80px;
+}
+
+
+  h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    line-height: 40px;
+}  
+}
+
+// @media  screen and (max-width: 850px) {
+  
+// }
+
+@media  screen and (max-width: 650px) {
+  .layout {
+    margin-bottom: 80px;
+}
+
+  .containerPast {
+    margin-top: 170px;
+}
+}
+
+@media  screen and  (max-width: 600px) {
+  
+}
+
+@media  screen and (max-width: 385px) {
+
 }
 

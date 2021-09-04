@@ -1,0 +1,64 @@
+.calendarText {
+    position: absolute;
+    background-image: url(../images/calendar.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 252px;
+    height: 48px;
+    // color: $gray;
+    padding: 10px;
+    background-color: $white;
+    border: 2px solid rgba(128, 131, 164, 0.6);
+    border-radius: 8px;
+}
+
+.containerCalendar {
+    position: absolute;
+    right: 272px;
+}
+
+.calendar {
+    position: absolute;
+    opacity: 0;
+    z-index: 7;
+}
+
+@media  screen and (min-width: 1281px) {
+    
+}
+@media  screen and (max-width: 1280px) {
+    
+}
+@media  screen and (max-width: 1024px) {
+    
+}
+@media  screen and (max-width: 850px) {
+    
+}
+@media  screen and (min-width: 651px) and (max-width: 1280px) {
+    
+}
+
+@media  screen  and (max-width: 650px) {
+    .containerCalendar {
+        top: 60px;
+        right: 350px;
+    }
+}
+
+@media  screen  and (max-width: 480px) {
+    .containerCalendar {
+        top: 60px;
+        right: 300px;
+    }
+}
+
+@media  screen  and (max-width: 385px) {
+    .containerCalendar {
+        top: 60px;
+        right: 280px;
+    }
+}
+
+

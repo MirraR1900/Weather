@@ -16,6 +16,8 @@ let timeValue = "";
 
 export const Card: React.FC<CardType> = ({ title, time }) => {
 
+  // console.log(document.documentElement.clientWidth);
+
   let value: string;
   let array: any = [];
   const urlWeather = 'https://api.openweathermap.org/data/2.5/onecall';
@@ -39,8 +41,13 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
     state: true
   }
 
+  const calendarObj = {
+    text: "Selected date",
+    state: false
+  }
+
   const [obj, setText] = useState(select);
-  const [calendar, setDate] = useState({text: "Selected date"})
+  const [calendar, setDate] = useState(calendarObj)
 
 
   const getOption = () => {
@@ -91,7 +98,7 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
     let monthsDate = strDate.getMonth()+1;
 
     let date = `${day < 10 ? "0" + day : day} / ${monthsDate < 10 ? "0" + monthsDate : monthsDate} / ${strDate.getFullYear()}`;
-    setDate({text: date});
+    setDate({text: date, state: true});
     getValuesPast();
   }
 
@@ -104,9 +111,7 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
       value = target.textContent;
       setText({ ...select, text: value })
     }
-
     getValuesPast();
-
   }
 
   const getValuesPast = async () => {
@@ -129,7 +134,7 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
   }
 
   const present = <Select cities={cities} obj={obj} getOption={getOption} getValue={getValuesPresent} />
-  const past = <><Select cities={cities} obj={obj} getOption={getOption} getValue={getLocation} getValuesPast={getValuesPast} /><Calendar text={calendar.text} getTime={getTime} /></>
+  const past = <><Select cities={cities} obj={obj} getOption={getOption} getValue={getLocation} getValuesPast={getValuesPast} /><Calendar text={calendar.text} state={calendar.state} getTime={getTime} /></>
 
   return (
     <div className="card">
