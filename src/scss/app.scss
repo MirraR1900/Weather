@@ -79,6 +79,10 @@ h2 {
 
 .calendarText {
     position: absolute;
+    background-image: url(../images/calendar.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 252px;
     height: 48px;
     padding: 10px;

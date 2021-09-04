@@ -1,10 +1,11 @@
 import React from 'react';
 
 type Calendar= {
+  text: String
   getTime: any
 }
 
-export const Calendar: React.FC<Calendar> = ({getTime}) => {
+export const Calendar: React.FC<Calendar> = ({text, getTime}) => {
 
     const today = new Date();
     const dateOffsetFive = (24*60*60*1000) * 5; //5 days
@@ -25,14 +26,10 @@ export const Calendar: React.FC<Calendar> = ({getTime}) => {
     const dateMin = `${yyyyMin}-${mmMin < 10 ? "0" + mmMin : mmMin}-${ddMin < 10 ? "0" + ddMin : ddMin}`;   
     const dateMax = `${yyyyMax}-${mmMax < 10 ? "0" + mmMax : mmMax}-${ddMax < 10 ? "0" + ddMax : ddMax}`;
 
-    const test = (e:any) => {
-      console.log(e);
-    }
-
   return (
     <div className="containerCalendar">
-      <div className="calendarText">Selected date</div>
-      <input className="styleIinput calendar" type="date" min={dateMin} max={dateMax} onChange={getTime} onClick={test} />
+      <div className="calendarText">{text}</div>
+      <input className="styleIinput calendar" type="date" min={dateMin} max={dateMax} onChange={getTime} />
     </div>
   )
 }

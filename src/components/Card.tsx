@@ -33,8 +33,6 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
   const [arr, setArray] = useState([]);
   const [weatherObj, setObj] = useState({});
 
-
-
   const select: any = {
     text: "Select city",
     image: "../images/down.png",
@@ -42,6 +40,7 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
   }
 
   const [obj, setText] = useState(select);
+  const [calendar, setDate] = useState({text: "Selected date"})
 
 
   const getOption = () => {
@@ -81,12 +80,18 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
 
   const getTime = (e: any) => {
     let target = e.target;
+    let strDate;
 
     if (target.type == 'date') {
       let time = target;
       timeValue = time.valueAsDate;
+      strDate = time.valueAsDate;
     }
+    let day = strDate.getDate();
+    let monthsDate = strDate.getMonth()+1;
 
+    let date = `${day < 10 ? "0" + day : day} / ${monthsDate < 10 ? "0" + monthsDate : monthsDate} / ${strDate.getFullYear()}`;
+    setDate({text: date});
     getValuesPast();
   }
 
@@ -124,7 +129,7 @@ export const Card: React.FC<CardType> = ({ title, time }) => {
   }
 
   const present = <Select cities={cities} obj={obj} getOption={getOption} getValue={getValuesPresent} />
-  const past = <><Select cities={cities} obj={obj} getOption={getOption} getValue={getLocation} getValuesPast={getValuesPast} /><Calendar getTime={getTime} /></>
+  const past = <><Select cities={cities} obj={obj} getOption={getOption} getValue={getLocation} getValuesPast={getValuesPast} /><Calendar text={calendar.text} getTime={getTime} /></>
 
   return (
     <div className="card">
