@@ -20,7 +20,7 @@
 
 .containerCalendar {
 position: absolute;
-right: 20px;
+right: 272px;
 }
 
 .container {
@@ -76,22 +76,26 @@ h2 {
     font-family: $InterMedium;
 }
 
-.spanSelect {
-    /* position: absolute; */
+
+.calendarText {
+    position: absolute;
+    background-image: url(../images/calendar.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 252px;
+    height: 48px;
     padding: 10px;
-    /* top: 5px;
-    left: 3px; */
+    color: $gray;
     background-color: $white;
-    /* z-index: 3; */
+    border: 2px solid rgba(128, 131, 164, 0.6);
+    border-radius: 8px;
 }
 
-.spanCalendar {
-    /* position: absolute; */
-    padding: 10px;
-    /* top: 5px;
-    left: 303px; */
-    background-color: $white;
-    /* z-index: 3; */
+.calendar {
+    position: absolute;
+    opacity: 0;
+    z-index: 7;
 }
 
 .arrow {
