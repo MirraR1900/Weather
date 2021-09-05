@@ -7,15 +7,17 @@ type BlockWeatherWeek = {
 
 export const BlockWeatherWeek: React.FC<BlockWeatherWeek> = ({ arrayWeather }) => {
 
-  const [indexstep, setStep] = useState(0);
   const classLeft: any = [];
   const classRight: any = [];
   const width = document.documentElement.clientWidth;
-
+  
+  const [indexstep, setStep] = useState(0);
+  
+  // turn off the button so that there is no empty space in the weather block 
   if (indexstep == 0) {
-    classRight.push("arrowsOpasity");
+    classRight.push("arrowDisable ");
   } else if ((indexstep == 4 && width > 650) || (indexstep == 6 && width < 650)) {
-    classLeft.push("arrowsOpasity");
+    classLeft.push("arrowDisable ");
   }
 
   const clickArrow = (e: any) => {

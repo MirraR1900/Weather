@@ -16,7 +16,7 @@ export const Select: React.FC<SelectType> = ({ cities, obj, getOption, getValue,
   if (!obj.state) {
     classes.push("visible")
   }
-
+  // change the color of the text if a city is selected 
   if(obj.text !== "Select city") {
     let temp = classesSelect.indexOf("default");
     classesSelect.splice(temp, 1, "selected");
