@@ -1,8 +1,6 @@
 # weather
 [View site](https://weather-site-test.netlify.app/)
 
-Status: In Progress
-
 
 The project was created for the purpose of acquaintance in React.js and for the experience of writing a project using TypeScript.
 
@@ -10,7 +8,7 @@ The project was created for the purpose of acquaintance in React.js and for the 
 - React.js
 - TypeScript
 - SCSS
-- API OpenWeather
+- [API OpenWeather](https://openweathermap.org/api)
 
 
 
