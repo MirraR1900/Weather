@@ -16,7 +16,7 @@ let timeValue = "";
 
 export const Card: React.FC<CardType> = ({ title, time }) => {
 
-  // console.log(document.documentElement.clientWidth);
+  console.log(document.documentElement.clientWidth);
 
   let value: string;
   let array: any = [];

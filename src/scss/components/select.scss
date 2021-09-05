@@ -23,9 +23,9 @@
 
 .list > li {
     list-style: none;
-        margin-top: 10px;
-        text-align: center;
-        cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
 }
 
 ul {
@@ -71,12 +71,3 @@ ul {
         left: 50px;
     }
 }
-
-
-@media  screen and (min-width: 320px) and (max-width: 385px) {
-    .containerSelect {
-        left: 20px;
-    }
-}
-
-
